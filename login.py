@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.QtCore import Qt
 from ui.login_ui import Ui_Dialog
+import resources
 
 
 class LoginDialog(QDialog):
@@ -9,6 +10,8 @@ class LoginDialog(QDialog):
         super().__init__()
         ui = Ui_Dialog()
         ui.setupUi(self)
+
+        self.setStyleSheet("background-image:url(:/Resources/bg.jpg)")
 
         ui.pushButton.clicked.connect(self.accept)
 
