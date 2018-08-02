@@ -3,9 +3,11 @@ from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
 from PyQt5.QtGui import QIcon
 from login import LoginDialog
 import resources
+import config
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setStyleSheet(config.global_qss)
     login_widget = LoginDialog()
     if login_widget.exec_() == QDialog.Accepted:
         main_window = QMainWindow()
